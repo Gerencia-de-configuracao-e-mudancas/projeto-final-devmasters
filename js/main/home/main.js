@@ -16,9 +16,11 @@ async function showCarroselSlides() {
   let filmesPopulares = await requestAPI("movie/popular");
 
   // Criar os elementos do carrossel
-  let arrayTitulosCarrossel = [...filmesPopulares.results.slice(0, 6)];
+  let arrayTitulosMostAvaliable = [...filmesPopulares.results].sort(
+    (a, b) => b.vote_average - a.vote_average
+  );
   CriarElementosCarrossel(
-    arrayTitulosCarrossel,
+    arrayTitulosMostAvaliable.slice(0, 6),
     $carrosselSlides,
     $conteinerIconesSlides
   );
