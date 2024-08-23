@@ -53,7 +53,7 @@ nav {
 }
 
 nav a {
-  font-size: 14px;
+  font-size: 17px;
   font-weight: 510;
   color: #d8c6b8;
   display: flex;
@@ -79,7 +79,10 @@ nav a:hover {
 }
 
 .corpo {
-  font-size: 30px;
+  display: flex;
+  flex-direction: column;
+  min-height: 60vh;
+  width: 100%;
 }
 
 .iconeMenu {
@@ -99,6 +102,7 @@ nav a:hover {
   backdrop-filter: blur(10px);
   flex-direction: column;
   gap: 2rem;
+  z-index: 1;
   a {
     font-size: 25px;
     color: #d8c6b8;
