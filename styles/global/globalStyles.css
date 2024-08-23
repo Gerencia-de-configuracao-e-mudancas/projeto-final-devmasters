@@ -79,7 +79,10 @@ nav a:hover {
 }
 
 .corpo {
-  font-size: 30px;
+  display: flex;
+  flex-direction: column;
+  min-height: 60vh;
+  width: 100%;
 }
 
 .iconeMenu {
