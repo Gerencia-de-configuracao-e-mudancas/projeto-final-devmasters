@@ -1,18 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
-
-:root{
-  --color-neutral-0: #0e0c0c
-  --color-neutral-10: #171717
-  --color-neutral-30: #a8a29e
-  --color-neutral-40: #f5f5f5
-}
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Inter" sans-serif;
-  letter-spacing: 1px;
+  font-family: "Roboto", sans-serif;
 }
 
 a {
@@ -154,86 +146,76 @@ nav a:hover {
   }
 }
 
-footer{
+footer {
+  margin-top: 30vh;
   width: 100%;
-  color: var(--color-neutral-40);
+  color: #f5f5f5;
+  background: linear-gradient(to bottom, #09111b, #0e0c0c, #0e0c0c);
+  display: flex;
+  flex-direction: column;
 }
 
-.footer-link{
+.footer-link {
   text-decoration: none;
+  color: #f5f5f5;
 }
 
-#footer_content{
-  background-color: var(--color-neutral-10);
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  padding: 3rem 3.5rem;
+#footer_content {
+  height: 25vh;
+  display: flex;
+  justify-content: space-around;
+  padding-top: 5vh;
 }
 
-#footer_contacts h1{
-  margin-bottom: 0.75rem;
-}
-
-#footer_social_media{
+#footer_social_media {
   display: flex;
   gap: 2rem;
   margin-top: 1rem;
 }
 
-#footer_social_media .footer-link{
+#footer_social_media .footer-link {
   height: 2.5rem;
   width: 2.5em;
-  color: var(--color-neutral-40);
+  color: #f5f5f5;
   border-radius: 50%;
   transition: all 0.4s;
 }
 
-
-#instagram{
-  font-size: 1em;
+#footer_contacts {
+  padding-bottom: 1vh;
+  p {
+    padding: 5px;
+    color: #a8a29e;
+  }
 }
 
-#github{
-  font-size: 1em;
-}
-
-.footer-list{
+.footer-list {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
   list-style: none;
-  color: black;
 }
 
-.footer-list .footer-link{
-  color: var(--color-neutral-30);
+.footer-list .footer-link {
+  color: #a8a29e;
 }
 
-#footer_subscribe{
+#footer_subscribe {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
 }
 
-#footer_copyright{
+#footer_copyright {
   display: flex;
   justify-content: center;
-  background-color: var(--color-neutral-0);
   font-size: 0.9rem;
   padding: 1.5rem;
   font-weight: 100;
 }
 
-@media screen and (max-width:768px){
-  #footer_content{
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-  }
+@media screen and (max-width: 768px) {
 }
 
-@media screen and (max-width:426px){
-  #footer_content{
-    grid-template-columns: repeat(1, 1fr);
-    padding: 3rem 2rem;
-  }
+@media screen and (max-width: 426px) {
 }
