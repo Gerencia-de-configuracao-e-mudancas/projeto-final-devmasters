@@ -54,8 +54,8 @@
   width: 100%;
 
   p {
-    font-size: 30px;
-    font-weight: 600;
+    font-size: 23px;
+    font-weight: 530;
     bottom: 10vh;
     color: white;
     text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
@@ -129,11 +129,11 @@
   }
   .infoSlides {
     p {
-      font-size: 20px;
+      font-size: 18px;
     }
     div {
       i {
-        font-size: 18px;
+        font-size: 16px;
       }
     }
   }
