@@ -88,18 +88,18 @@ function CriarElementosCarrossel(array, conteinerSlides, conteinerIcones) {
       let infoIconesSlides = document.createElement("div");
 
       let iconeStar = document.createElement("i");
-      iconeStar.className = "bx bx-star";
+      iconeStar.className = "bx bxs-star";
 
       let textNotaTitulo = document.createElement("strong");
-      textNotaTitulo.textContent = titulo.vote_average;
+      textNotaTitulo.textContent = `${titulo.vote_average.toFixed(1)}/10`;
 
-      let iconeCalendar = document.createElement("i");
+      /*let iconeCalendar = document.createElement("i");
       iconeCalendar.className = "bx bx-calendar";
 
       let textDataTitulo = document.createElement("strong");
       textDataTitulo.textContent = titulo.release_date
         ? titulo.release_date
-        : titulo.first_air_date;
+        : titulo.first_air_date;*/
 
       // Criar ícone
       let icone = document.createElement("span");
@@ -111,8 +111,8 @@ function CriarElementosCarrossel(array, conteinerSlides, conteinerIcones) {
       infoSlides.appendChild(infoIconesSlides);
       infoIconesSlides.appendChild(iconeStar);
       infoIconesSlides.appendChild(textNotaTitulo);
-      infoIconesSlides.appendChild(iconeCalendar);
-      infoIconesSlides.appendChild(textDataTitulo);
+      /*infoIconesSlides.appendChild(iconeCalendar);
+      infoIconesSlides.appendChild(textDataTitulo);*/
       divSlide.appendChild(infoSlides);
       conteinerSlides.appendChild(divSlide);
 
