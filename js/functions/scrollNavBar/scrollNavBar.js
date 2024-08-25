@@ -9,8 +9,9 @@ const $iconeMenu = document.querySelectorAll(".iconeMenu");
 //eventos
 
 $navBar.forEach((nav) => {
+  const navOffSetTop = nav.offsetTop;
   window.addEventListener("scroll", () => {
-    navBarFixedTop(nav);
+    navBarFixedTop(nav, navOffSetTop);
   });
 });
 
@@ -29,8 +30,8 @@ $modalMenuTelasMenores.forEach((modal, indice) => {
 
 //funções
 
-function navBarFixedTop(nav) {
-  if (window.scrollY >= nav.offsetTop) {
+function navBarFixedTop(nav, navOffSetTop) {
+  if (window.scrollY >= navOffSetTop) {
     nav.classList.add("scrolledNavBar");
   } else {
     nav.classList.remove("scrolledNavBar");
