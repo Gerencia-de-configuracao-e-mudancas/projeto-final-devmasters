@@ -27,6 +27,7 @@ a {
 
 html {
   background-color: #09111b;
+  color: #d8c6b8;
 }
 
 .conteinerPrincipal {
@@ -88,7 +89,7 @@ nav a:hover {
 
 .scrolledNavBar {
   background-color: rgba(9, 17, 27, 0.7);
-
+  backdrop-filter: blur(3px);
   position: fixed;
   z-index: 1;
   top: 0;
@@ -257,6 +258,31 @@ footer {
   }
 }
 
+.cardTitulo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  cursor: pointer;
+  gap: 1rem;
+  width: 250px;
+  padding: 10px;
+  img {
+    width: 100%;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+  }
+}
+
+.cardTitulo:hover {
+  transition: 0.3s;
+  img {
+    opacity: 0.7;
+  }
+  p {
+    color: #faff2a;
+  }
+}
+
 @media screen and (max-width: 750px) {
   #footer_contacts {
     width: 40%;
@@ -270,6 +296,9 @@ footer {
     width: 40%;
     align-items: center;
   }
+  .cardTitulo {
+    width: 200px;
+  }
 }
 
 @media screen and (max-width: 600px) {
@@ -278,6 +307,9 @@ footer {
   }
   header {
     height: 30vh;
+  }
+  .cardTitulo {
+    width: 150px;
   }
 }
 
@@ -320,6 +352,14 @@ footer {
     gap: 0.3rem;
     p {
       font-size: 13px;
+    }
+  }
+  .cardTitulo {
+    width: 128px;
+
+    p {
+      letter-spacing: 1px;
+      text-align: center;
     }
   }
 }
