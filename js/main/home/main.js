@@ -1,10 +1,11 @@
-import requestAPI from "../../functions/requestAPI/requestAPI.js";
+import RequestAPI from "../../functions/requestAPI/requestAPI.js";
 
 // Variáveis
 let currentSlide = 0;
 const urlBaseImg = "https://image.tmdb.org/t/p/w500";
 const $carrosselSlides = document.querySelector(".carrosselSlides");
 const $conteinerIconesSlides = document.querySelector(".iconesSlides");
+const pegarDadosAPI = new RequestAPI();
 
 // Evento
 
@@ -13,7 +14,7 @@ window.addEventListener("DOMContentLoaded", showCarroselSlides);
 // Funções
 
 async function showCarroselSlides() {
-  let filmesPopulares = await requestAPI("movie/popular");
+  let filmesPopulares = await pegarDadosAPI.requestMostPopular("movie");
 
   // Criar os elementos do carrossel
   let arrayTitulosMostAvaliable = [...filmesPopulares.results].sort(

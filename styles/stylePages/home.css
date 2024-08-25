@@ -123,8 +123,8 @@
   align-items: center;
   justify-content: space-between;
   p {
-    font-size: 28px;
-    font-weight: 520;
+    font-size: 27px;
+    font-weight: 510;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
   }
 }
