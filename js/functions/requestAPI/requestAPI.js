@@ -3,9 +3,11 @@ class RequestAPI {
     this.ApiKey = "90d591526c10ba96419d8d87cb7ba5a8";
     this.urlBaseAPI = "https://api.themoviedb.org/3/";
   }
-  async requestMostPopular(tipo) {
+  async requestMostPopular(tipo, page) {
     try {
-      let urlMontada = `${this.urlBaseAPI}${tipo}/popular?api_key=${this.ApiKey}&language=pt-BR`;
+      let urlMontada = `${this.urlBaseAPI}${tipo}/popular?api_key=${
+        this.ApiKey
+      }&language=pt-BR&page=${page ? page : 1}`;
       let data = await fetch(urlMontada);
       let dados = await data.json();
       return dados;

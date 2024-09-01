@@ -1,5 +1,6 @@
 import RequestAPI from "../../functions/requestAPI/requestAPI.js";
 import renderCardsTitulo from "../../functions/renderCardsTitulo/renderCardsTitulo.js";
+import MudarPageTitulos from "../../functions/mudarPageTitulos/MudarPageTitulos.js";
 
 // Variáveis
 let currentSlide = 0;
@@ -12,6 +13,14 @@ const $btnVerMaisSeries = document.querySelector("#btnVerMaisSeries");
 const $btnVerMenosSeries = document.querySelector("#btnVerMenosSeries");
 const $contenerRenderFilmes = document.querySelector("#contenerRenderFilmes");
 const $contenerRenderSeries = document.querySelector("#contenerRenderSeries");
+const $conteinerBtnControlPagesSeries = document.querySelector(
+  "#conteinerBtnControlPagesSeries"
+);
+const $conteinerBtnControlPagesFilmes = document.querySelector(
+  "#conteinerBtnControlPagesFilmes"
+);
+const $infoTituloFilmes = document.querySelector("#infoTituloFilmes");
+const $infoTituloSeries = document.querySelector("#infoTituloSeries");
 //const $ = document.querySelector();
 const pegarDadosAPI = new RequestAPI();
 
@@ -19,47 +28,93 @@ const pegarDadosAPI = new RequestAPI();
 
 window.addEventListener("DOMContentLoaded", () => {
   showCarroselSlides();
-  ShowFilmesSeries();
+  ShowFilmes(1);
+  ShowSeries(1);
 });
 
 // Funções
 
-async function ShowFilmesSeries() {
-  let filmesPopulares = await pegarDadosAPI.requestMostPopular("movie");
-  let seriesPopulares = await pegarDadosAPI.requestMostPopular("tv");
+async function ShowFilmes(pageFilmes) {
+  $btnVerMaisFilmes.classList.remove("hide");
+  $btnVerMenosFilmes.classList.add("hide");
 
-  renderCardsTitulo($contenerRenderFilmes, filmesPopulares.results.slice(0, 4));
-  renderCardsTitulo($contenerRenderSeries, seriesPopulares.results.slice(0, 4));
+  let filmesPopulares = await pegarDadosAPI.requestMostPopular(
+    "movie",
+    pageFilmes
+  );
+
+  MostrarTitulos($contenerRenderFilmes, filmesPopulares, true);
 
   $btnVerMaisFilmes.addEventListener("click", () => {
     $btnVerMaisFilmes.classList.add("hide");
     $btnVerMenosFilmes.classList.remove("hide");
-    renderCardsTitulo($contenerRenderFilmes, filmesPopulares.results);
+    MostrarTitulos($contenerRenderFilmes, filmesPopulares, false);
   });
 
   $btnVerMenosFilmes.addEventListener("click", () => {
     $btnVerMenosFilmes.classList.add("hide");
     $btnVerMaisFilmes.classList.remove("hide");
-    renderCardsTitulo(
-      $contenerRenderFilmes,
-      filmesPopulares.results.slice(0, 4)
-    );
+    MostrarTitulos($contenerRenderFilmes, filmesPopulares, true);
   });
+
+  MudarPageTitulos(
+    $conteinerBtnControlPagesFilmes,
+    pageFilmes,
+    filmesPopulares.total_pages,
+    () => {
+      ShowFilmes(pageFilmes - 1, false);
+      $infoTituloFilmes.scrollIntoView({ behavior: "instant" });
+    },
+    () => {
+      ShowFilmes(pageFilmes + 1, false);
+      $infoTituloFilmes.scrollIntoView({ behavior: "instant" });
+    }
+  );
+}
+
+async function ShowSeries(pageSeries) {
+  $btnVerMaisSeries.classList.remove("hide");
+  $btnVerMenosSeries.classList.add("hide");
+  let seriesPopulares = await pegarDadosAPI.requestMostPopular(
+    "tv",
+    pageSeries
+  );
+
+  MostrarTitulos($contenerRenderSeries, seriesPopulares, true);
 
   $btnVerMaisSeries.addEventListener("click", () => {
     $btnVerMaisSeries.classList.add("hide");
     $btnVerMenosSeries.classList.remove("hide");
-    renderCardsTitulo($contenerRenderSeries, seriesPopulares.results);
+    MostrarTitulos($contenerRenderSeries, seriesPopulares, false);
   });
 
   $btnVerMenosSeries.addEventListener("click", () => {
     $btnVerMenosSeries.classList.add("hide");
     $btnVerMaisSeries.classList.remove("hide");
-    renderCardsTitulo(
-      $contenerRenderSeries,
-      seriesPopulares.results.slice(0, 4)
-    );
+    MostrarTitulos($contenerRenderSeries, seriesPopulares, true);
   });
+
+  MudarPageTitulos(
+    $conteinerBtnControlPagesSeries,
+    pageSeries,
+    seriesPopulares.total_pages,
+    () => {
+      ShowSeries(pageSeries - 1, false);
+      $infoTituloSeries.scrollIntoView({ behavior: "instant" });
+    },
+    () => {
+      ShowSeries(pageSeries + 1, false);
+      $infoTituloSeries.scrollIntoView({ behavior: "instant" });
+    }
+  );
+}
+
+function MostrarTitulos(conteiner, array, isMinimo) {
+  if (isMinimo) {
+    renderCardsTitulo(conteiner, array.results.slice(0, 4));
+    return;
+  }
+  renderCardsTitulo(conteiner, array.results);
 }
 
 async function showCarroselSlides() {
