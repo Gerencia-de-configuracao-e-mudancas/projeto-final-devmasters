@@ -1,0 +1,107 @@
+* {
+  color: #d8c6b8;
+}
+
+.conteinerPesquisa {
+  min-width: 70%;
+  margin: 0 auto;
+  margin-top: 10vh;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.infoPesquisa {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  gap: 2rem;
+}
+
+.infoGeneroBusca {
+  p {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 16px;
+    font-weight: bold;
+    i {
+      font-size: 20px;
+      color: #faff2a;
+    }
+  }
+  p:hover {
+    color: #faff2a;
+  }
+}
+
+.selectFilmeSerie {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #61636a;
+  border-radius: 15px;
+  button {
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 15px;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.3rem;
+  }
+}
+
+.active {
+  background-color: #faff2a;
+  color: #09111b;
+  i {
+    color: #09111b;
+  }
+}
+
+.desactive {
+  background-color: #09111b;
+  color: #61636a;
+  i {
+    color: #61636a;
+  }
+}
+.desactive:hover {
+  color: #d8c6b8;
+  i {
+    color: #d8c6b8;
+  }
+}
+
+.elementsPesquisa {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  input {
+    padding: 13px;
+    color: #d8c6b8;
+    background-color: rgba(0, 0, 0, 0.3);
+    border: 1px solid #61636a;
+    width: 90vh;
+    border-radius: 8px;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.4);
+    outline: none;
+  }
+}
+
+.generos {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.hide {
+  display: none;
+}
