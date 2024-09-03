@@ -27,6 +27,30 @@ class RequestAPI {
       console.log(error);
     }
   }
+  async requestWithGenre(tipo, id) {
+    try {
+      let urlMontada = `${this.urlBaseAPI}discover/${tipo}?api_key=${this.ApiKey}&language=pt-BR&with_genres=${id}
+&language=pt-BR`;
+      let data = await fetch(urlMontada);
+      let dados = await data.json();
+      return dados;
+    } catch (error) {
+      console.log(error);
+    }
+  }
+  async requestRandomTitulo(tipo, pageAleatoria) {
+    try {
+      let urlMontada = `${this.urlBaseAPI}discover/${tipo}?api_key=${this.ApiKey}&language=pt-BR&sort_by=popularity.desc&page=${pageAleatoria}
+      &language=pt-BR`;
+      let data = await fetch(urlMontada);
+      let dados = await data.json();
+      let tituloAleatorio =
+        dados.results[Math.floor(Math.random() * dados.results.length)];
+      return tituloAleatorio;
+    } catch (error) {
+      console.log(error);
+    }
+  }
 }
 
 export default RequestAPI;
