@@ -3,7 +3,7 @@
 }
 
 .conteinerPesquisa {
-  min-width: 70%;
+  width: 70%;
   margin: 0 auto;
   margin-top: 10vh;
   display: flex;
@@ -12,10 +12,11 @@
 }
 
 .infoPesquisa {
+  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
+  width: 100vh;
 
   gap: 2rem;
 }
@@ -90,7 +91,7 @@
     color: #d8c6b8;
     background-color: rgba(0, 0, 0, 0.2);
     border: 1px solid #61636a;
-    width: 90vh;
+    width: 100vh;
     border-radius: 8px;
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.4);
     outline: none;
@@ -132,4 +133,12 @@
 
 .hide {
   display: none;
+}
+
+.conteinerRenderPesquisa {
+  margin-top: 3vh;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
 }

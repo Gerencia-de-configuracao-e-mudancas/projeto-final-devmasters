@@ -1,12 +1,19 @@
 //variaveis
 
+import renderCardsTitulo from "../../functions/renderCardsTitulo/renderCardsTitulo.js";
+import RequestAPI from "../../functions/requestAPI/requestAPI.js";
+
 const $btnSelectFilmes = document.querySelector("#selectFilmes");
 const $btnSelectSeries = document.querySelector("#selectSeries");
 const $selectGenre = document.querySelector("#selectGenre");
 const $selectSearch = document.querySelector("#selectSearch");
 const $inputPesquisa = document.querySelector("#inputPesquisa");
 const $conteinerGeneros = document.querySelector("#conteinerGeneros");
+const $conteinerRenderPesquisa = document.querySelector(
+  "#conteinerRenderPesquisa"
+);
 //const $ = document.querySelector("");
+const requestsAPI = new RequestAPI();
 
 let parametroBusca = "movie";
 
@@ -34,8 +41,20 @@ $btnSelectFilmes.addEventListener("click", selecionarFilmes);
 $btnSelectSeries.addEventListener("click", selecionarSeries);
 $selectGenre.addEventListener("click", mostrarGeneros);
 $selectSearch.addEventListener("click", fecharGeneros);
+$inputPesquisa.addEventListener("input", (e) => {
+  renderizarTitulos(e);
+});
 
 //funções
+
+async function renderizarTitulos(e) {
+  $btnSelectFilmes.scrollIntoView({ behavior: "smooth" });
+  let arrayTitulos = await requestsAPI.requestSearch(
+    parametroBusca,
+    e.target.value
+  );
+  renderCardsTitulo($conteinerRenderPesquisa, arrayTitulos.results);
+}
 
 function fecharGeneros() {
   $conteinerGeneros.classList.add("hide");
@@ -52,7 +71,6 @@ function selecionarFilmes() {
     $btnSelectSeries.classList.remove("active");
     $btnSelectSeries.classList.add("desactive");
     parametroBusca = "movie";
-    mostrarGeneros();
   }
 }
 
@@ -63,7 +81,6 @@ function selecionarSeries() {
     $btnSelectFilmes.classList.remove("active");
     $btnSelectFilmes.classList.add("desactive");
     parametroBusca = "tv";
-    mostrarGeneros();
   }
 }
 
