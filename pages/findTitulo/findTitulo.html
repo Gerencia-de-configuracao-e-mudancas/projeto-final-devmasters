@@ -71,10 +71,8 @@
               </button>
             </div>
             <div class="infoGeneroBusca">
-              <div>
-                <p id="selectGenre">
-                  Por genêro <i class="bx bxs-down-arrow"></i>
-                </p>
+              <div id="selectGenre">
+                <p>Por genêro <i class="bx bxs-down-arrow"></i></p>
               </div>
               <div class="hide" id="selectSearch">
                 <p>Por nome <i class="bx bx-search-alt-2"></i></p>
@@ -88,8 +86,7 @@
               placeholder="Digite o nome do tiutlo..."
             />
           </div>
-
-          <div class="listGeneros"></div>
+          <div class="listGeneros hide" id="conteinerGeneros"></div>
 
           <div class="conteinerRenderPesquisa"></div>
         </div>
@@ -178,5 +175,6 @@
       </footer>
     </div>
     <script src="../../js/functions/scrollNavBar/scrollNavBar.js"></script>
+    <script src="../../js/main/findTitulo/main.js" type="module"></script>
   </body>
 </html>

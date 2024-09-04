@@ -14,8 +14,9 @@
 .infoPesquisa {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   width: 100%;
+
   gap: 2rem;
 }
 
@@ -87,12 +88,13 @@
   input {
     padding: 13px;
     color: #d8c6b8;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.2);
     border: 1px solid #61636a;
     width: 90vh;
     border-radius: 8px;
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.4);
     outline: none;
+    font-size: 16px;
   }
 }
 
@@ -100,6 +102,32 @@
   display: flex;
   flex-direction: column;
   width: 100%;
+}
+
+.listGeneros {
+  margin: 0 auto;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.genero-button {
+  width: 20vh;
+  height: 10vh;
+  box-shadow: 0px 0px 3px rgba(255, 255, 255, 0.3);
+  background: linear-gradient(45deg, #09111b, #1c2a3a);
+  transition: all;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: bold;
+}
+.genero-button:hover {
+  background: linear-gradient(45deg, #09111b, rgba(250, 255, 42, 0.6));
+  transition: 0.5s;
 }
 
 .hide {
