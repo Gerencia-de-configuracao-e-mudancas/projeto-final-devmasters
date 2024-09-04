@@ -5,7 +5,7 @@
 .conteinerPesquisa {
   width: 70%;
   margin: 0 auto;
-  margin-top: 10vh;
+  margin-top: 8vh;
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -16,7 +16,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100vh;
+  width: 80%;
 
   gap: 2rem;
 }
@@ -88,10 +88,10 @@
   gap: 2rem;
   input {
     padding: 13px;
-    color: #d8c6b8;
-    background-color: rgba(0, 0, 0, 0.2);
+    color: #09111b;
+    background-color: #d8c6b8;
     border: 1px solid #61636a;
-    width: 100vh;
+    width: 80%;
     border-radius: 8px;
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.4);
     outline: none;
@@ -141,4 +141,78 @@
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
+}
+
+@media screen and (max-width: 600px) {
+  .conteinerPesquisa {
+    width: 85%;
+    margin-top: 6vh;
+  }
+  .elementsPesquisa {
+    gap: 1rem;
+    input {
+      width: 100%;
+    }
+  }
+  .infoPesquisa {
+    width: 90%;
+  }
+  .infoGeneroBusca {
+    p {
+      font-size: 15px;
+      i {
+        font-size: 18px;
+      }
+    }
+  }
+  .selectFilmeSerie {
+    button {
+      font-size: 15px;
+    }
+  }
+  .conteinerRenderPesquisa {
+    justify-content: center;
+  }
+  .genero-button {
+  }
+  .listGeneros {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .conteinerPesquisa {
+    width: 85%;
+    margin-top: 6vh;
+  }
+  .elementsPesquisa {
+    gap: 1rem;
+    input {
+      width: 100%;
+    }
+  }
+  .infoPesquisa {
+    width: 100%;
+  }
+  .infoGeneroBusca {
+    p {
+      font-size: 14px;
+      i {
+        font-size: 17px;
+      }
+    }
+  }
+  .selectFilmeSerie {
+    button {
+      font-size: 14px;
+    }
+  }
+  .conteinerRenderPesquisa {
+    justify-content: center;
+  }
+  .genero-button {
+  }
+  .listGeneros {
+    width: 100%;
+  }
 }

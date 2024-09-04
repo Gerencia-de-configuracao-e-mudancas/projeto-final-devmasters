@@ -9,7 +9,9 @@ function renderCardsTitulo(conteiner, lista, eventFunction) {
       imgCard.src = `https://image.tmdb.org/t/p/w500${titulo.poster_path}`;
 
       let textTitulo = document.createElement("p");
-      textTitulo.textContent = titulo.name ? titulo.name : titulo.title;
+      textTitulo.textContent = titulo.name
+        ? titulo.name.slice(0, 20)
+        : titulo.title.slice(0, 20);
 
       card.appendChild(imgCard);
       card.appendChild(textTitulo);
