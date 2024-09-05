@@ -17,7 +17,8 @@ async function gerarFilmeAleatorio() {
     let arrayDados = [dados];
 
     renderCardsTitulo($containerRenderTituloAleatorio, arrayDados);
-    $botao.scrollIntoView({behavior:"smooth"});
 }
+
+window.addEventListener("DOMContentLoaded", gerarFilmeAleatorio);
 
 $botao.addEventListener("click", gerarFilmeAleatorio)
