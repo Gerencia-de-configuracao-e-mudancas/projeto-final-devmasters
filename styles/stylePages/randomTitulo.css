@@ -1,22 +1,22 @@
-.botao{
+.botao {
   width: 100%;
   margin-top: 5vh;
   display: flex;
   align-items: center;
   justify-content: center;
 
-  button{
+  button {
     font-size: 30px;
     padding: 15px 30px;
     border: 0;
     border-radius: 15px;
     color: white;
     font-weight: 400;
-    background: linear-gradient(to right,#0c1e35e8, #112741, #093468);
+    background: linear-gradient(to right, #0c1e35e8, #112741, #093468);
     cursor: pointer;
   }
-  
-  button:hover{
+
+  button:hover {
     animation-name: botao;
     animation-duration: 0.5s;
     animation-iteration-count: infinite;
@@ -42,27 +42,27 @@ footer {
   flex-direction: column;
 }
 
-.containerRenderTituloAleatorio{
+.containerRenderTituloAleatorio {
   display: flex;
   align-items: center;
   justify-content: center;
   margin-top: 5vh;
 }
 
-@keyframes botao{
-  0%{
+@keyframes botao {
+  0% {
     transform: scale(1);
   }
-  100%{
+  100% {
     transform: scale(1.05);
   }
 }
 
 @media screen and (max-width: 600px) {
-  .botao{
+  .botao {
     width: 100%;
-    margin-top: 20vh;
-    button{
+    margin-top: 5vh;
+    button {
       font-size: 20px;
       padding: 18px 28px;
     }
@@ -70,15 +70,15 @@ footer {
 }
 
 @media screen and (max-width: 450px) {
-  .botao{
+  .botao {
     width: 100%;
-    margin-top: 20vh;
-    button{
+    margin-top: 3vh;
+    button {
       font-size: 16px;
       padding: 15px 25px;
     }
   }
-  .containerRenderTituloAleatorio{
+  .containerRenderTituloAleatorio {
     margin-top: 5vh;
   }
 }

@@ -54,11 +54,12 @@
   width: 100%;
 
   p {
-    font-size: 22px;
-    font-weight: 530;
+    font-size: 20px;
+    font-weight: 510;
     bottom: 10vh;
     color: white;
     text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
   }
   div {
     display: flex;

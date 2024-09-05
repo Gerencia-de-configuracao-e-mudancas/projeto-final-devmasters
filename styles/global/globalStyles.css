@@ -311,6 +311,9 @@ footer {
   .cardTitulo {
     width: 150px;
   }
+  .logo {
+    background: url("../../assets/img/vingadores-logo.jpg") center top;
+  }
 }
 
 @media screen and (max-width: 450px) {
