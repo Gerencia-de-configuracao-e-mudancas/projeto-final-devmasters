@@ -189,8 +189,8 @@ function CriarElementosCarrossel(array, conteinerSlides, conteinerIcones) {
 
       let textTitulo = document.createElement("p");
       textTitulo.textContent = titulo.name
-        ? titulo.name.toUpperCase()
-        : titulo.title.toUpperCase();
+        ? titulo.name.slice(0, 30).toUpperCase()
+        : titulo.title.slice(0, 30).toUpperCase();
 
       let infoIconesSlides = document.createElement("div");
 
