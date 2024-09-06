@@ -13,8 +13,18 @@
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="shortcut icon"
+      href="/assets/img/favicon.ico"
+      type="image/x-icon"
+    />
   </head>
   <body>
     <div class="conteinerPrincipal">
@@ -26,6 +36,7 @@
 
         <a href="../favorites/favorites.html">MEUS FAVORITOS</a>
       </div>
+      <div class="divModal hide" id="divModalFavorites"></div>
       <header>
         <div class="logo">
           <div class="conteinerLogo"><h1>MEUS FAVORITOS</h1></div>
@@ -52,34 +63,42 @@
         <div id="footer_content">
           <div id="footer_contacts">
             <h3>Sobre nós</h3>
-              <div class="infoIntegrantes">
-                <p>Alex Alcantara</p>
-                <a href="https://www.instagram.com/alexalcantaral/" class="footer-link" >
-                <i class="fa-brands fa-instagram"></i>
-                </a>
-               <a href="https://github.com/alexalcantaral" class="footer-link" >
-                <i class="fa-brands fa-github"></i>
-                </a>
-              </div>
-              <div class="infoIntegrantes">
-                <p>Diego Leite</p>
-              <a href="https://www.instagram.com/diegolts7/" class="footer-link">
+            <div class="infoIntegrantes">
+              <p>Alex Alcantara</p>
+              <a
+                href="https://www.instagram.com/alexalcantaral/"
+                class="footer-link"
+              >
                 <i class="fa-brands fa-instagram"></i>
               </a>
-              <a href="https://github.com/diegolts7" class="footer-link" >
+              <a href="https://github.com/alexalcantaral" class="footer-link">
                 <i class="fa-brands fa-github"></i>
-              </a> 
-              </div>
-              <div class="infoIntegrantes">
-                <p>Savio Lopes</p>
-              <a href="https://www.instagram.com/saviolopesvs/" class="footer-link">
+              </a>
+            </div>
+            <div class="infoIntegrantes">
+              <p>Diego Leite</p>
+              <a
+                href="https://www.instagram.com/diegolts7/"
+                class="footer-link"
+              >
                 <i class="fa-brands fa-instagram"></i>
               </a>
-              <a href="https://github.com/saviolvs" class="footer-link" >
+              <a href="https://github.com/diegolts7" class="footer-link">
                 <i class="fa-brands fa-github"></i>
               </a>
-              </div>
-              
+            </div>
+            <div class="infoIntegrantes">
+              <p>Savio Lopes</p>
+              <a
+                href="https://www.instagram.com/saviolopesvs/"
+                class="footer-link"
+              >
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+              <a href="https://github.com/saviolvs" class="footer-link">
+                <i class="fa-brands fa-github"></i>
+              </a>
+            </div>
           </div>
           <ul class="footer-list">
             <li>
@@ -106,20 +125,17 @@
               <a href="#" class="footer-link">Chat</a>
             </li>
           </ul>
-            <div id="footer_subscribe">
-              <h3>Inscreva-se</h3>
-              <p>
-                Deixe sua mensagem e nos ajude a melhorar
-              </p>
-              <div id="input_group">
-                <input type="email" id="email">
-                <button>
-                  Enviar
-                  <i class="fa-regular fa-envelope"></i>
-                </button>
-              </div>
+          <div id="footer_subscribe">
+            <h3>Inscreva-se</h3>
+            <p>Deixe sua mensagem e nos ajude a melhorar</p>
+            <div id="input_group">
+              <input type="email" id="email" />
+              <button>
+                Enviar
+                <i class="fa-regular fa-envelope"></i>
+              </button>
             </div>
-          </ul>
+          </div>
         </div>
         <div id="footer_copyright">
           &copy Todos os direitos reservados - 2024

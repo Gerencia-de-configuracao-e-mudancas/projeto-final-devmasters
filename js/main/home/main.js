@@ -21,6 +21,7 @@ const $conteinerBtnControlPagesFilmes = document.querySelector(
 );
 const $infoTituloFilmes = document.querySelector("#infoTituloFilmes");
 const $infoTituloSeries = document.querySelector("#infoTituloSeries");
+const $modalInfoTitulo = document.querySelector("#divModalHome");
 //const $ = document.querySelector();
 const pegarDadosAPI = new RequestAPI();
 
@@ -111,10 +112,10 @@ async function ShowSeries(pageSeries) {
 
 function MostrarTitulos(conteiner, array, isMinimo) {
   if (isMinimo) {
-    renderCardsTitulo(conteiner, array.results.slice(0, 4));
+    renderCardsTitulo(conteiner, array.results.slice(0, 4), $modalInfoTitulo);
     return;
   }
-  renderCardsTitulo(conteiner, array.results);
+  renderCardsTitulo(conteiner, array.results, $modalInfoTitulo);
 }
 
 async function showCarroselSlides() {

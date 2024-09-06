@@ -12,6 +12,7 @@ const $conteinerGeneros = document.querySelector("#conteinerGeneros");
 const $conteinerRenderPesquisa = document.querySelector(
   "#conteinerRenderPesquisa"
 );
+const $modalInfoTitulo = document.querySelector("#divModalFindTitulo");
 //const $ = document.querySelector("");
 const requestsAPI = new RequestAPI();
 
@@ -53,7 +54,11 @@ async function renderizarTitulos(e) {
     parametroBusca,
     e.target.value
   );
-  renderCardsTitulo($conteinerRenderPesquisa, arrayTitulos.results);
+  renderCardsTitulo(
+    $conteinerRenderPesquisa,
+    arrayTitulos.results,
+    $modalInfoTitulo
+  );
 }
 
 function fecharGeneros() {
