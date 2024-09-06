@@ -18,7 +18,6 @@ $navBar.forEach((nav) => {
 $iconeMenu.forEach((icone, indice) => {
   icone.addEventListener("click", () => {
     showMenu(indice);
-    console.log($modalMenuTelasMenores[indice]);
   });
 });
 

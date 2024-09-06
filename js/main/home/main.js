@@ -1,6 +1,7 @@
 import RequestAPI from "../../functions/requestAPI/requestAPI.js";
 import renderCardsTitulo from "../../functions/renderCardsTitulo/renderCardsTitulo.js";
 import MudarPageTitulos from "../../functions/mudarPageTitulos/MudarPageTitulos.js";
+import ModalInfoTitulo from "../../functions/modalInfoTitulo/ModalInfoTitulo.js";
 
 // Variáveis
 let currentSlide = 0;
@@ -21,6 +22,7 @@ const $conteinerBtnControlPagesFilmes = document.querySelector(
 );
 const $infoTituloFilmes = document.querySelector("#infoTituloFilmes");
 const $infoTituloSeries = document.querySelector("#infoTituloSeries");
+const $modalInfoTitulo = document.querySelector("#divModalHome");
 //const $ = document.querySelector();
 const pegarDadosAPI = new RequestAPI();
 
@@ -111,10 +113,10 @@ async function ShowSeries(pageSeries) {
 
 function MostrarTitulos(conteiner, array, isMinimo) {
   if (isMinimo) {
-    renderCardsTitulo(conteiner, array.results.slice(0, 4));
+    renderCardsTitulo(conteiner, array.results.slice(0, 4), $modalInfoTitulo);
     return;
   }
-  renderCardsTitulo(conteiner, array.results);
+  renderCardsTitulo(conteiner, array.results, $modalInfoTitulo);
 }
 
 async function showCarroselSlides() {
@@ -200,11 +202,13 @@ function CriarElementosCarrossel(array, conteinerSlides, conteinerIcones) {
       let textNotaTitulo = document.createElement("strong");
       textNotaTitulo.textContent = `${titulo.vote_average.toFixed(1)}/10`;
 
-      // Criar ícone
       let icone = document.createElement("span");
       icone.className = indice === 0 ? "dot active" : "dot";
 
-      // Adicionar imagem ao slide e slide ao carrossel
+      divSlide.addEventListener("click", () => {
+        ModalInfoTitulo(titulo, $modalInfoTitulo);
+      });
+
       divSlide.appendChild(img);
       infoSlides.appendChild(textTitulo);
       infoSlides.appendChild(infoIconesSlides);

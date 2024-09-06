@@ -1,4 +1,6 @@
-function renderCardsTitulo(conteiner, lista, eventFunction) {
+import ModalInfoTitulo from "../modalInfoTitulo/ModalInfoTitulo.js";
+
+function renderCardsTitulo(conteiner, lista, modal) {
   conteiner.innerHTML = "";
   lista.forEach((titulo, indice) => {
     if (titulo.poster_path && titulo.adult === false) {
@@ -17,7 +19,9 @@ function renderCardsTitulo(conteiner, lista, eventFunction) {
       card.appendChild(textTitulo);
       conteiner.appendChild(card);
 
-      card.addEventListener("click", eventFunction);
+      card.addEventListener("click", () => {
+        ModalInfoTitulo(titulo, modal);
+      });
     }
   });
 }
