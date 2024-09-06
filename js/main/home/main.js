@@ -1,6 +1,7 @@
 import RequestAPI from "../../functions/requestAPI/requestAPI.js";
 import renderCardsTitulo from "../../functions/renderCardsTitulo/renderCardsTitulo.js";
 import MudarPageTitulos from "../../functions/mudarPageTitulos/MudarPageTitulos.js";
+import ModalInfoTitulo from "../../functions/modalInfoTitulo/ModalInfoTitulo.js";
 
 // Variáveis
 let currentSlide = 0;
@@ -201,11 +202,13 @@ function CriarElementosCarrossel(array, conteinerSlides, conteinerIcones) {
       let textNotaTitulo = document.createElement("strong");
       textNotaTitulo.textContent = `${titulo.vote_average.toFixed(1)}/10`;
 
-      // Criar ícone
       let icone = document.createElement("span");
       icone.className = indice === 0 ? "dot active" : "dot";
 
-      // Adicionar imagem ao slide e slide ao carrossel
+      divSlide.addEventListener("click", () => {
+        ModalInfoTitulo(titulo, $modalInfoTitulo);
+      });
+
       divSlide.appendChild(img);
       infoSlides.appendChild(textTitulo);
       infoSlides.appendChild(infoIconesSlides);
