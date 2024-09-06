@@ -12,8 +12,9 @@ function ModalInfoTitulo(titulo, modal) {
   divImg.className = "divImg";
 
   let modalImg = document.createElement("img");
-  modalImg.src = `https://image.tmdb.org/t/p/w500${titulo.backdrop_path}`;
-  console.log(titulo);
+  modalImg.src = titulo.backdrop_path
+    ? `https://image.tmdb.org/t/p/w500${titulo.backdrop_path}`
+    : "";
 
   let divOverview = document.createElement("div");
   divOverview.className = "divOverview";
