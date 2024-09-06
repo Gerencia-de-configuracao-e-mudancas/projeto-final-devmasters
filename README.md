@@ -4,12 +4,12 @@
 
 O projeto é um site de recomendações de filmes e séries, que apresenta 4 páginas com objetivos diferentes. <br>
 
-<ol style="list-style-type: none; padding: 0;">
-  <li style="position: relative; padding-left: 2em;"><b>Inicio:</b> Página inicial do site onde mostra alguns dos filmes e séries mais famosos da atualidade. <span style="position: absolute; left: 0; top: 0;">🏠</span></li>
-  <li style="position: relative; padding-left: 2em;"><b>Buscar:</b> Serve para buscar um filme e série que você deseje e ver a nota de avaliação dele e outras características. <span style="position: absolute; left: 0; top: 0;">🔎</span></li>
-  <li style="position: relative; padding-left: 2em;"><b>Recomendação:</b> Filmes e séries são gerados aleatoriamente de nossas recomendações para o usuário assistir. <span style="position: absolute; left: 0; top: 0;">🎬</span></li>
-  <li style="position: relative; padding-left: 2em;"><b>Meus favoritos:</b> Filmes e séries que o usuário se interessa e coloca nos favoritos para assistir posteriormente. <span style="position: absolute; left: 0; top: 0;">❤️</span></li>
-</ol>
+<ul>
+  <li><b>Inicio:</b> Página inicial do site onde mostra alguns dos filmes e séries mais famosos da atualidade.</li>
+  <li><b>Buscar:</b> Serve para buscar um filme e série que você deseje e ver a nota de avaliação dele e outras características.</li>
+  <li><b>Recomendação:</b> Filmes e séries são gerados aleatoriamente de nossas recomendações para o usuário assistir.</li>
+  <li><b>Meus favoritos:</b> Filmes e séries que o usuário se interessa e coloca nos favoritos para assistir posteriormente.</li>
+</ul>
 
 ### Tecnologias ultilizadas
 
