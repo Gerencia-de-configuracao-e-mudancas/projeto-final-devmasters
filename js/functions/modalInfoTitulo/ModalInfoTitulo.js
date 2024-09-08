@@ -28,8 +28,8 @@ function ModalInfoTitulo(titulo, modal) {
   let popularity = document.createElement("p");
   popularity.textContent = titulo.popularity;
 
-  let imgPipoca = document.createElement("img");
-  imgPipoca.src = "../../../assets/img/pngwing.png";
+  let iconePopularity = document.createElement("i");
+  iconePopularity.className = "bx bxs-hot";
 
   let vote_average = document.createElement("p");
   vote_average.textContent = titulo.vote_average.toFixed(1);
@@ -83,7 +83,7 @@ function ModalInfoTitulo(titulo, modal) {
   divInfoMidiaTitulo.appendChild(vote_average);
   divInfoMidiaTitulo.appendChild(iconeVote);
   divInfoMidiaTitulo.appendChild(popularity);
-  divInfoMidiaTitulo.appendChild(imgPipoca);
+  divInfoMidiaTitulo.appendChild(iconePopularity);
   divInfoMidiaTitulo.appendChild(release_date);
   divInfoMidiaTitulo.appendChild(iconeDate);
   divModalCentral.appendChild(divInfoMidiaTitulo);

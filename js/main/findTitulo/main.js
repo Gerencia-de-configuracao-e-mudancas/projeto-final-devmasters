@@ -1,5 +1,6 @@
 //variaveis
 
+import iconeTitulosVazio from "../../functions/iconeTitulosVazio/iconeTitulosVazio.js";
 import renderCardsTitulo from "../../functions/renderCardsTitulo/renderCardsTitulo.js";
 import RequestAPI from "../../functions/requestAPI/requestAPI.js";
 
@@ -13,6 +14,10 @@ const $conteinerRenderPesquisa = document.querySelector(
   "#conteinerRenderPesquisa"
 );
 const $modalInfoTitulo = document.querySelector("#divModalFindTitulo");
+const $textResultadoPesquisa = document.querySelector("#textResultadoPesquisa");
+const $conteinerInfoResultadoPesquisa = document.querySelector(
+  ".infoResultadoPesquisa"
+);
 //const $ = document.querySelector("");
 const requestsAPI = new RequestAPI();
 
@@ -45,6 +50,9 @@ $selectSearch.addEventListener("click", fecharGeneros);
 $inputPesquisa.addEventListener("input", (e) => {
   renderizarTitulos(e);
 });
+window.addEventListener("DOMContentLoaded", () =>
+  iconeTitulosVazio($conteinerRenderPesquisa)
+);
 
 //funções
 
@@ -52,7 +60,18 @@ async function renderizarTitulos(e) {
   $btnSelectFilmes.scrollIntoView({ behavior: "smooth" });
   let arrayTitulos = await requestsAPI.requestSearch(
     parametroBusca,
-    e.target.value
+    e.target.value,
+    $conteinerRenderPesquisa
+  );
+  mostrarTextoResultadoBusca(
+    e.target.value === ""
+      ? ""
+      : arrayTitulos.results.length > 0
+      ? `${arrayTitulos.results.length} resultados para: ${e.target.value.slice(
+          0,
+          25
+        )}`
+      : ""
   );
   renderCardsTitulo(
     $conteinerRenderPesquisa,
@@ -76,6 +95,7 @@ function selecionarFilmes() {
     $btnSelectSeries.classList.remove("active");
     $btnSelectSeries.classList.add("desactive");
     parametroBusca = "movie";
+    fecharGeneros();
   }
 }
 
@@ -86,6 +106,7 @@ function selecionarSeries() {
     $btnSelectFilmes.classList.remove("active");
     $btnSelectFilmes.classList.add("desactive");
     parametroBusca = "tv";
+    fecharGeneros();
   }
 }
 
@@ -102,6 +123,26 @@ function mostrarGeneros() {
     const button = document.createElement("button");
     button.textContent = genero;
     button.classList.add("genero-button");
+
+    button.addEventListener("click", () => renderGenero(id, genero));
+
     $conteinerGeneros.appendChild(button);
   });
+}
+
+async function renderGenero(id, genero) {
+  let dados = await requestsAPI.requestWithGenre(
+    parametroBusca,
+    id,
+    $conteinerRenderPesquisa
+  );
+  renderCardsTitulo($conteinerRenderPesquisa, dados.results, $modalInfoTitulo);
+  $conteinerInfoResultadoPesquisa.scrollIntoView({ behavior: "smooth" });
+  mostrarTextoResultadoBusca(
+    `${dados.results.length} resultados para: ${genero}`
+  );
+}
+
+function mostrarTextoResultadoBusca(text) {
+  $textResultadoPesquisa.textContent = text;
 }
