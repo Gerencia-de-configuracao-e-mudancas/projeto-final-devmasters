@@ -20,7 +20,8 @@ async function gerarFilmeAleatorio() {
   while (!dados.poster_path) {
     dados = await resquestsAPI.requestRandomTitulo(
       arrayEscolhaFilmeSerie[escolhaAleatoria],
-      numeroAleatorio
+      numeroAleatorio,
+      $containerRenderTituloAleatorio
     );
   }
   let arrayDados = [dados];

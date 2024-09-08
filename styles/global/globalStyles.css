@@ -404,6 +404,11 @@ footer {
   }
 }
 
+.imgLoading {
+  width: 50px;
+  margin: 0 auto;
+}
+
 @media screen and (max-width: 750px) {
   #footer_contacts {
     width: 40%;

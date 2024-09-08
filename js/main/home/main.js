@@ -42,7 +42,8 @@ async function ShowFilmes(pageFilmes) {
 
   let filmesPopulares = await pegarDadosAPI.requestMostPopular(
     "movie",
-    pageFilmes
+    pageFilmes,
+    $contenerRenderFilmes
   );
 
   MostrarTitulos($contenerRenderFilmes, filmesPopulares, true);
@@ -79,7 +80,8 @@ async function ShowSeries(pageSeries) {
   $btnVerMenosSeries.classList.add("hide");
   let seriesPopulares = await pegarDadosAPI.requestMostPopular(
     "tv",
-    pageSeries
+    pageSeries,
+    $contenerRenderSeries
   );
 
   MostrarTitulos($contenerRenderSeries, seriesPopulares, true);
@@ -120,7 +122,11 @@ function MostrarTitulos(conteiner, array, isMinimo) {
 }
 
 async function showCarroselSlides() {
-  let filmesPopulares = await pegarDadosAPI.requestMostPopular("movie");
+  let filmesPopulares = await pegarDadosAPI.requestMostPopular(
+    "movie",
+    1,
+    $carrosselSlides
+  );
 
   // Criar os elementos do carrossel
   let arrayTitulosMostAvaliable = [...filmesPopulares.results].sort(

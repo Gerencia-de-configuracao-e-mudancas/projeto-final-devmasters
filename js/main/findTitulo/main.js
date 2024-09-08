@@ -56,7 +56,8 @@ async function renderizarTitulos(e) {
   $btnSelectFilmes.scrollIntoView({ behavior: "smooth" });
   let arrayTitulos = await requestsAPI.requestSearch(
     parametroBusca,
-    e.target.value
+    e.target.value,
+    $conteinerRenderPesquisa
   );
   if (e.target.value !== "") {
     mostrarTextoResultadoBusca(
@@ -126,8 +127,12 @@ function mostrarGeneros() {
 }
 
 async function renderGenero(id, genero) {
-  let dados = await requestsAPI.requestWithGenre(parametroBusca, id);
-  renderCardsTitulo($conteinerRenderPesquisa, dados.results, $modalInfoTitulo);
+  let dados = await requestsAPI.requestWithGenre(
+    parametroBusca,
+    id,
+    $conteinerRenderPesquisa
+  );
+  renderCardsTitulo($conteinerRenderPesquisa, dados.results);
   $conteinerInfoResultadoPesquisa.scrollIntoView({ behavior: "smooth" });
   mostrarTextoResultadoBusca(
     `${dados.results.length} resultados para: ${genero}`
