@@ -132,7 +132,7 @@ async function renderGenero(id, genero) {
     id,
     $conteinerRenderPesquisa
   );
-  renderCardsTitulo($conteinerRenderPesquisa, dados.results);
+  renderCardsTitulo($conteinerRenderPesquisa, dados.results, $modalInfoTitulo);
   $conteinerInfoResultadoPesquisa.scrollIntoView({ behavior: "smooth" });
   mostrarTextoResultadoBusca(
     `${dados.results.length} resultados para: ${genero}`

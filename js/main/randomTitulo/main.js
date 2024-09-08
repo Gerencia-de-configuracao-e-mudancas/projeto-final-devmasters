@@ -15,7 +15,8 @@ async function gerarFilmeAleatorio() {
   let escolhaAleatoria = Math.floor(Math.random() * 2);
   let dados = await resquestsAPI.requestRandomTitulo(
     arrayEscolhaFilmeSerie[escolhaAleatoria],
-    numeroAleatorio
+    numeroAleatorio,
+    $containerRenderTituloAleatorio
   );
   while (!dados.poster_path) {
     dados = await resquestsAPI.requestRandomTitulo(

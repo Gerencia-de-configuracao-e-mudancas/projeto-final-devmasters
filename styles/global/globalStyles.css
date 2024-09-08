@@ -71,7 +71,7 @@ nav {
 }
 
 nav a {
-  font-size: 17px;
+  font-size: 16px;
   font-weight: 510;
   color: #d8c6b8;
   display: flex;
@@ -343,6 +343,7 @@ footer {
   font-size: 18px;
   color: #faff2a;
   font-weight: bold;
+  text-align: center;
 }
 
 .divOverview {
