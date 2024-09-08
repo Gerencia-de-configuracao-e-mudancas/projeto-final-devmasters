@@ -375,9 +375,6 @@ footer {
     font-weight: bold;
     color: #d8c6b8;
   }
-  img {
-    width: 18px;
-  }
   i {
     color: #faff2a;
     font-size: 22px;
@@ -390,7 +387,8 @@ footer {
     cursor: pointer;
   }
   i:hover {
-    color: #faff2a;
+    color: red;
+    transition: 0.3s;
   }
 }
 
@@ -398,10 +396,11 @@ footer {
   i {
     font-size: 30px;
     cursor: pointer;
-    color: #faff2a;
+    color: red;
   }
   i:hover {
-    opacity: 0.7;
+    opacity: 0.6;
+    transition: 0.3s;
   }
 }
 
@@ -435,6 +434,9 @@ footer {
   }
   .logo {
     background: url("../../assets/img/vingadores-logo.jpg") center top;
+  }
+  .divModalCentral {
+    width: 55vh;
   }
 }
 
@@ -488,6 +490,6 @@ footer {
     }
   }
   .divModalCentral {
-    width: 45vh;
+    width: 90%;
   }
 }

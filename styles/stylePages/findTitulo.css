@@ -136,11 +136,23 @@
 }
 
 .conteinerRenderPesquisa {
-  margin-top: 3vh;
   width: 100%;
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
+}
+
+.infoResultadoPesquisa {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2vh;
+  p {
+    font-size: 13px;
+    font-weight: bold;
+    color: #faff2a;
+    text-align: center;
+  }
 }
 
 @media screen and (max-width: 600px) {
@@ -172,8 +184,6 @@
   }
   .conteinerRenderPesquisa {
     justify-content: center;
-  }
-  .genero-button {
   }
   .listGeneros {
     width: 80%;

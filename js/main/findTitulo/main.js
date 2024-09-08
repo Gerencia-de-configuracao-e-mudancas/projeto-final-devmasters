@@ -13,6 +13,10 @@ const $conteinerRenderPesquisa = document.querySelector(
   "#conteinerRenderPesquisa"
 );
 const $modalInfoTitulo = document.querySelector("#divModalFindTitulo");
+const $textResultadoPesquisa = document.querySelector("#textResultadoPesquisa");
+const $conteinerInfoResultadoPesquisa = document.querySelector(
+  ".infoResultadoPesquisa"
+);
 //const $ = document.querySelector("");
 const requestsAPI = new RequestAPI();
 
@@ -54,6 +58,16 @@ async function renderizarTitulos(e) {
     parametroBusca,
     e.target.value
   );
+  if (e.target.value !== "") {
+    mostrarTextoResultadoBusca(
+      `${arrayTitulos.results.length} resultados para: ${e.target.value.slice(
+        0,
+        25
+      )}`
+    );
+  } else {
+    mostrarTextoResultadoBusca("");
+  }
   renderCardsTitulo(
     $conteinerRenderPesquisa,
     arrayTitulos.results,
@@ -76,6 +90,7 @@ function selecionarFilmes() {
     $btnSelectSeries.classList.remove("active");
     $btnSelectSeries.classList.add("desactive");
     parametroBusca = "movie";
+    fecharGeneros();
   }
 }
 
@@ -86,6 +101,7 @@ function selecionarSeries() {
     $btnSelectFilmes.classList.remove("active");
     $btnSelectFilmes.classList.add("desactive");
     parametroBusca = "tv";
+    fecharGeneros();
   }
 }
 
@@ -102,6 +118,22 @@ function mostrarGeneros() {
     const button = document.createElement("button");
     button.textContent = genero;
     button.classList.add("genero-button");
+
+    button.addEventListener("click", () => renderGenero(id, genero));
+
     $conteinerGeneros.appendChild(button);
   });
+}
+
+async function renderGenero(id, genero) {
+  let dados = await requestsAPI.requestWithGenre(parametroBusca, id);
+  renderCardsTitulo($conteinerRenderPesquisa, dados.results, $modalInfoTitulo);
+  $conteinerInfoResultadoPesquisa.scrollIntoView({ behavior: "smooth" });
+  mostrarTextoResultadoBusca(
+    `${dados.results.length} resultados para: ${genero}`
+  );
+}
+
+function mostrarTextoResultadoBusca(text) {
+  $textResultadoPesquisa.textContent = text;
 }
