@@ -1,5 +1,6 @@
 //variaveis
 
+import iconeTitulosVazio from "../../functions/iconeTitulosVazio/iconeTitulosVazio.js";
 import renderCardsTitulo from "../../functions/renderCardsTitulo/renderCardsTitulo.js";
 import RequestAPI from "../../functions/requestAPI/requestAPI.js";
 
@@ -49,6 +50,9 @@ $selectSearch.addEventListener("click", fecharGeneros);
 $inputPesquisa.addEventListener("input", (e) => {
   renderizarTitulos(e);
 });
+window.addEventListener("DOMContentLoaded", () =>
+  iconeTitulosVazio($conteinerRenderPesquisa)
+);
 
 //funções
 
@@ -59,16 +63,16 @@ async function renderizarTitulos(e) {
     e.target.value,
     $conteinerRenderPesquisa
   );
-  if (e.target.value !== "") {
-    mostrarTextoResultadoBusca(
-      `${arrayTitulos.results.length} resultados para: ${e.target.value.slice(
-        0,
-        25
-      )}`
-    );
-  } else {
-    mostrarTextoResultadoBusca("");
-  }
+  mostrarTextoResultadoBusca(
+    e.target.value === ""
+      ? ""
+      : arrayTitulos.results.length > 0
+      ? `${arrayTitulos.results.length} resultados para: ${e.target.value.slice(
+          0,
+          25
+        )}`
+      : ""
+  );
   renderCardsTitulo(
     $conteinerRenderPesquisa,
     arrayTitulos.results,
