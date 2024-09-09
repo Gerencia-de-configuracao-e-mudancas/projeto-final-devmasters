@@ -1,7 +1,7 @@
 import iconeTitulosVazio from "../iconeTitulosVazio/iconeTitulosVazio.js";
 import ModalInfoTitulo from "../modalInfoTitulo/ModalInfoTitulo.js";
 
-function renderCardsTitulo(conteiner, lista, modal) {
+function renderCardsTitulo(conteiner, lista, modal, isPageFavoritos) {
   conteiner.innerHTML = "";
   if (lista.length > 0) {
     lista.forEach((titulo, indice) => {
@@ -22,7 +22,7 @@ function renderCardsTitulo(conteiner, lista, modal) {
         conteiner.appendChild(card);
 
         card.addEventListener("click", () => {
-          ModalInfoTitulo(titulo, modal);
+          ModalInfoTitulo(titulo, modal, isPageFavoritos, conteiner);
         });
       }
     });

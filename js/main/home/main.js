@@ -115,10 +115,10 @@ async function ShowSeries(pageSeries) {
 
 function MostrarTitulos(conteiner, array, isMinimo) {
   if (isMinimo) {
-    renderCardsTitulo(conteiner, array.results.slice(0, 4), $modalInfoTitulo);
+    renderCardsTitulo(conteiner, array.results.slice(0, 4), $modalInfoTitulo, false);
     return;
   }
-  renderCardsTitulo(conteiner, array.results, $modalInfoTitulo);
+  renderCardsTitulo(conteiner, array.results, $modalInfoTitulo, false);
 }
 
 async function showCarroselSlides() {

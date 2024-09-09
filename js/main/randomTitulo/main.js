@@ -30,7 +30,8 @@ async function gerarFilmeAleatorio() {
   renderCardsTitulo(
     $containerRenderTituloAleatorio,
     arrayDados,
-    $modalInfoTitulo
+    $modalInfoTitulo,
+    false
   );
 }
 
