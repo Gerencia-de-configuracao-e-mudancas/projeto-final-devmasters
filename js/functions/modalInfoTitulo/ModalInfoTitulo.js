@@ -1,3 +1,7 @@
+import ListaFavoritos from "../listaFavoritos/ListaFavoritos.js";
+let listaLocalStorege = localStorage.getItem("listaFavoritos") !== null ? JSON.parse(localStorage.getItem("listaFavoritos")):[];
+const minhaLista = new ListaFavoritos(listaLocalStorege);
+
 function ModalInfoTitulo(titulo, modal) {
   modal.classList.remove("hide");
 
@@ -51,6 +55,7 @@ function ModalInfoTitulo(titulo, modal) {
   divFavoritarTitulo.addEventListener("click", () => {
     divFavoritarTitulo.classList.add("hide");
     divTituloFavorito.classList.remove("hide");
+    minhaLista.adicionarTitulo(titulo.id, titulo)
   });
 
   let iconeHeart = document.createElement("i");
@@ -58,11 +63,18 @@ function ModalInfoTitulo(titulo, modal) {
 
   let divTituloFavorito = document.createElement("div");
   divTituloFavorito.className = "divTituloFavorito";
-  divTituloFavorito.classList.add("hide");
+  
+  if(minhaLista.isTituloFavorito(titulo.id)){
+    divFavoritarTitulo.classList.add("hide");
+  }
+  else{
+    divTituloFavorito.classList.add("hide");
+  }
 
   divTituloFavorito.addEventListener("click", () => {
     divFavoritarTitulo.classList.remove("hide");
     divTituloFavorito.classList.add("hide");
+    minhaLista.removerTitulo(titulo.id);
   });
 
   let iconeHeartFavoritado = document.createElement("i");
