@@ -18,6 +18,9 @@ class ListaFavoritos {
     isTituloFavorito(id){
         return this.meusFavoritos.has(id);
     }
+    pegarTitulos(){
+        return Array.from(this.meusFavoritos.values());
+    }
 }
 
 export default ListaFavoritos;

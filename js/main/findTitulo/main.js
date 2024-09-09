@@ -76,7 +76,8 @@ async function renderizarTitulos(e) {
   renderCardsTitulo(
     $conteinerRenderPesquisa,
     arrayTitulos.results,
-    $modalInfoTitulo
+    $modalInfoTitulo,
+    false
   );
 }
 
@@ -136,7 +137,7 @@ async function renderGenero(id, genero) {
     id,
     $conteinerRenderPesquisa
   );
-  renderCardsTitulo($conteinerRenderPesquisa, dados.results, $modalInfoTitulo);
+  renderCardsTitulo($conteinerRenderPesquisa, dados.results, $modalInfoTitulo, false);
   $conteinerInfoResultadoPesquisa.scrollIntoView({ behavior: "smooth" });
   mostrarTextoResultadoBusca(
     `${dados.results.length} resultados para: ${genero}`
