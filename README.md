@@ -1,7 +1,5 @@
 # DevMasters - Aplicação web sobre filmes e séries em conjunto com a API do TMDB
 
-### Projeto da disciplina de Gerência de Configuração e Mudanças
-
 O projeto é um site de recomendações de filmes e séries, que apresenta 4 páginas com objetivos diferentes. <br>
 
 
