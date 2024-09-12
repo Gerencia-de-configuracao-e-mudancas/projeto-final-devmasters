@@ -55,3 +55,13 @@ fetch("https://api.themoviedb.org/3/discover/TIPO?api_key=CHAVE_API&sort_by=popu
 ```
 
 </div>
+
+### Site
+
+<div align="center">
+    <img src="./assets/img/inicio.jpg" alt="Tela Inicial" width="300" />
+    <img src="./assets/img/descricao.jpg" alt="Descrição" width="300" />
+    <img src="./assets/img/busca.jpg" alt="Busca" width="300" />
+    <img src="./assets/img/recomendações.jpg" alt="Recomendações" width="300" />
+    <img src="./assets/img/meusfavoritos.jpg" alt="Meus Favoritos" width="300" />
+</div>
