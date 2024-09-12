@@ -54,7 +54,7 @@ fetch("https://api.themoviedb.org/3/discover/TIPO?api_key=CHAVE_API&sort_by=popu
 
 </div>
 
-### Imagens DevMasters
+### Preview
 
 <div align="center">
     <div style="display: flex; flex-wrap: wrap; justify-content: center;">
@@ -80,3 +80,7 @@ fetch("https://api.themoviedb.org/3/discover/TIPO?api_key=CHAVE_API&sort_by=popu
         </div>
     </div>
 </div>
+
+### Link
+
+🔗 https://gerencia-de-configuracao-e-mudancas.github.io/projeto-final-devmasters/pages/home/home.html
