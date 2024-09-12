@@ -59,9 +59,24 @@ fetch("https://api.themoviedb.org/3/discover/TIPO?api_key=CHAVE_API&sort_by=popu
 ### Site
 
 <div align="center">
-    <img src="./assets/img/inicio.jpg" alt="Tela Inicial" width="300" />
-    <img src="./assets/img/descricao.jpg" alt="Descrição" width="300" />
-    <img src="./assets/img/busca.jpg" alt="Busca" width="300" />
-    <img src="./assets/img/recomendações.jpg" alt="Recomendações" width="300" />
-    <img src="./assets/img/meusfavoritos.jpg" alt="Meus Favoritos" width="300" />
+    <figure>
+        <img src="./assets/img/inicio.jpg" alt="Tela Inicial" width="300" />
+        <figcaption>Tela Inicial</figcaption>
+    </figure>
+    <figure>
+        <img src="./assets/img/descricao.jpg" alt="Descrição" width="300" />
+        <figcaption>Descrição</figcaption>
+    </figure>
+    <figure>
+        <img src="./assets/img/busca.jpg" alt="Busca" width="300" />
+        <figcaption>Busca</figcaption>
+    </figure>
+    <figure>
+        <img src="./assets/img/recomendações.jpg" alt="Recomendações" width="300" />
+        <figcaption>Recomendações</figcaption>
+    </figure>
+    <figure>
+        <img src="./assets/img/meusfavoritos.jpg" alt="Meus Favoritos" width="300" />
+        <figcaption>Meus Favoritos</figcaption>
+    </figure>
 </div>
