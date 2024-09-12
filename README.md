@@ -17,12 +17,41 @@ O projeto é um site de recomendações de filmes e séries, que apresenta 4 pá
 ![CSS](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 ![JavaScript](    https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 
-### Comunicação e interação com a API do TMDB
+### Comunicação e interação com a API do TMDB
 
-<b>Popularidade:</b> fetch("https://api.themoviedb.org/3/TIPO/popular?api_key=CHAVE_API&language=pt-BR&page=PAGE")
+<b>Popularidade:</b>
+<div style="background-color: black; border-radius: 10px;">
 
-<b>Busca:</b> fetch("https://api.themoviedb.org/3/search/TIPO?api_key=CHAVE_API&query=NOME_BUSCA&language=pt-BR&page=PAGE")
+```javascript
+fetch("https://api.themoviedb.org/3/TIPO/popular?api_key=CHAVE_API&language=pt-BR&page=PAGE")
+```
 
-<b>Busca por gênero:</b> fetch("https://api.themoviedb.org/3/discover/TIPO?api_key=CHAVE_API&language=pt-BR&&with_genres=ID_GENERO&page=PAGE")
+</div>
 
-<b>Busca por séries e filmes aleatórios:</b> fetch("https://api.themoviedb.org/3/discover/TIPO?api_key=CHAVE_API&sort_by=popularity.desc&page=PAGINA&language=pt-BR")
+
+<b>Busca:</b>
+<div style="background-color: black; border-radius: 10px;">
+
+```javascript
+fetch("https://api.themoviedb.org/3/search/TIPO?api_key=CHAVE_API&query=NOME_BUSCA&language=pt-BR&page=PAGE")
+```
+
+</div>
+
+<b>Busca por gênero:</b>
+<div style="background-color: black; border-radius: 10px;">
+
+```javascript
+fetch("https://api.themoviedb.org/3/discover/TIPO?api_key=CHAVE_API&language=pt-BR&&with_genres=ID_GENERO&page=PAGE")
+```
+
+</div>
+
+<b>Busca por séries e filmes aleatórios:</b> 
+<div style="background-color: black; border-radius: 10px;">
+
+```javascript
+fetch("https://api.themoviedb.org/3/discover/TIPO?api_key=CHAVE_API&sort_by=popularity.desc&page=PAGINA&language=pt-BR")
+```
+
+</div>
