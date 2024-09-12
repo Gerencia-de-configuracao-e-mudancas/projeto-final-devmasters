@@ -85,6 +85,6 @@ fetch("https://api.themoviedb.org/3/discover/TIPO?api_key=CHAVE_API&sort_by=popu
 
 <div border-radius: 10px; padding: 10px; color: white; font-family: monospace;">
     <code>
-        🔗 <a href="https://gerencia-de-configuracao-e-mudancas.github.io/projeto-final-devmasters/pages/home/home.html" style="color:;">https://gerencia-de-configuracao-e-mudancas.github.io/projeto-final-devmasters/pages/home/home.html</a>
+        <a href="https://gerencia-de-configuracao-e-mudancas.github.io/projeto-final-devmasters/pages/home/home.html" style="color:;"> 🔗 https://gerencia-de-configuracao-e-mudancas.github.io/projeto-final-devmasters/pages/home/home.html</a>
     </code>
 </div>
