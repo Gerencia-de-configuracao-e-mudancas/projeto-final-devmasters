@@ -58,25 +58,25 @@ fetch("https://api.themoviedb.org/3/discover/TIPO?api_key=CHAVE_API&sort_by=popu
 
 <div align="center">
     <div style="display: flex; flex-wrap: wrap; justify-content: center;">
-        <div style="margin: 10px; text-align: center;">
+        <div style="margin: 20px; text-align: center;">
             <img src="./assets/img/inicio.jpg" alt="Tela Inicial" width="300" />
-            <p>Tela Inicial</p>
+            <p style="margin-top: 15px; font-weight: bold;">Tela Inicial:</p>
         </div>
-        <div style="margin: 10px; text-align: center;">
+        <div style="margin: 20px; text-align: center;">
             <img src="./assets/img/descricao.jpg" alt="Descrição" width="300" />
-            <p>Descrição</p>
+            <p style="margin-top: 15px; font-weight: bold;">Descrição:</p>
         </div>
-        <div style="margin: 10px; text-align: center;">
+        <div style="margin: 20px; text-align: center;">
             <img src="./assets/img/busca.jpg" alt="Busca" width="300" />
-            <p>Busca</p>
+            <p style="margin-top: 15px; font-weight: bold;">Busca:</p>
         </div>
-        <div style="margin: 10px; text-align: center;">
+        <div style="margin: 20px; text-align: center;">
             <img src="./assets/img/recomendações.jpg" alt="Recomendações" width="300" />
-            <p>Recomendações</p>
+            <p style="margin-top: 15px; font-weight: bold;">Recomendações:</p>
         </div>
-        <div style="margin: 10px; text-align: center;">
+        <div style="margin: 20px; text-align: center;">
             <img src="./assets/img/meusfavoritos.jpg" alt="Meus Favoritos" width="300" />
-            <p>Meus Favoritos</p>
+            <p style="margin-top: 15px; font-weight: bold;">Meus Favoritos:</p>
         </div>
     </div>
 </div>
