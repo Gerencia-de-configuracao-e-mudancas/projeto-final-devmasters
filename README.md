@@ -59,28 +59,32 @@ fetch("https://api.themoviedb.org/3/discover/TIPO?api_key=CHAVE_API&sort_by=popu
 <div align="center">
     <div style="display: flex; flex-wrap: wrap; justify-content: center;">
         <div style="margin: 20px; text-align: center;">
+            <p style="font-weight: bold; margin-bottom: 10px;">Tela Inicial:</p>
             <img src="./assets/img/inicio.jpg" alt="Tela Inicial" width="300" />
-            <p style="margin-top: 15px; font-weight: bold;">Tela Inicial:</p>
         </div>
         <div style="margin: 20px; text-align: center;">
+            <p style="font-weight: bold; margin-bottom: 10px;">Descrição:</p>
             <img src="./assets/img/descricao.jpg" alt="Descrição" width="300" />
-            <p style="margin-top: 15px; font-weight: bold;">Descrição:</p>
         </div>
         <div style="margin: 20px; text-align: center;">
+            <p style="font-weight: bold; margin-bottom: 10px;">Busca:</p>
             <img src="./assets/img/busca.jpg" alt="Busca" width="300" />
-            <p style="margin-top: 15px; font-weight: bold;">Busca:</p>
         </div>
         <div style="margin: 20px; text-align: center;">
+            <p style="font-weight: bold; margin-bottom: 10px;">Recomendações:</p>
             <img src="./assets/img/recomendações.jpg" alt="Recomendações" width="300" />
-            <p style="margin-top: 15px; font-weight: bold;">Recomendações:</p>
         </div>
         <div style="margin: 20px; text-align: center;">
+            <p style="font-weight: bold; margin-bottom: 10px;">Meus Favoritos:</p>
             <img src="./assets/img/meusfavoritos.jpg" alt="Meus Favoritos" width="300" />
-            <p style="margin-top: 15px; font-weight: bold;">Meus Favoritos:</p>
         </div>
     </div>
 </div>
 
 ### Link
 
-🔗 https://gerencia-de-configuracao-e-mudancas.github.io/projeto-final-devmasters/pages/home/home.html
+<div border-radius: 10px; padding: 10px; color: white; font-family: monospace;">
+    <code>
+        🔗 <a href="https://gerencia-de-configuracao-e-mudancas.github.io/projeto-final-devmasters/pages/home/home.html" style="color:;">https://gerencia-de-configuracao-e-mudancas.github.io/projeto-final-devmasters/pages/home/home.html</a>
+    </code>
+</div>
