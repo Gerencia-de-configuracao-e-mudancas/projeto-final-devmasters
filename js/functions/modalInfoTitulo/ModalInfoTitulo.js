@@ -1,6 +1,9 @@
 import ListaFavoritos from "../listaFavoritos/ListaFavoritos.js";
 import renderCardsTitulo from "../renderCardsTitulo/renderCardsTitulo.js";
-let listaLocalStorege = localStorage.getItem("listaFavoritos") !== null ? JSON.parse(localStorage.getItem("listaFavoritos")):[];
+let listaLocalStorege =
+  localStorage.getItem("listaFavoritos") !== null
+    ? JSON.parse(localStorage.getItem("listaFavoritos"))
+    : [];
 const minhaLista = new ListaFavoritos(listaLocalStorege);
 
 function ModalInfoTitulo(titulo, modal, isPageFavoritos, conteiner) {
@@ -56,9 +59,14 @@ function ModalInfoTitulo(titulo, modal, isPageFavoritos, conteiner) {
   divFavoritarTitulo.addEventListener("click", () => {
     divFavoritarTitulo.classList.add("hide");
     divTituloFavorito.classList.remove("hide");
-    minhaLista.adicionarTitulo(titulo.id, titulo)
-    if(isPageFavoritos){
-      renderCardsTitulo(conteiner, Array.from(minhaLista.pegarTitulos()), modal)
+    minhaLista.adicionarTitulo(titulo.id, titulo);
+    if (isPageFavoritos) {
+      renderCardsTitulo(
+        conteiner,
+        Array.from(minhaLista.pegarTitulos()),
+        modal,
+        isPageFavoritos
+      );
     }
   });
 
@@ -67,11 +75,10 @@ function ModalInfoTitulo(titulo, modal, isPageFavoritos, conteiner) {
 
   let divTituloFavorito = document.createElement("div");
   divTituloFavorito.className = "divTituloFavorito";
-  
-  if(minhaLista.isTituloFavorito(titulo.id)){
+
+  if (minhaLista.isTituloFavorito(titulo.id)) {
     divFavoritarTitulo.classList.add("hide");
-  }
-  else{
+  } else {
     divTituloFavorito.classList.add("hide");
   }
 
@@ -79,8 +86,13 @@ function ModalInfoTitulo(titulo, modal, isPageFavoritos, conteiner) {
     divFavoritarTitulo.classList.remove("hide");
     divTituloFavorito.classList.add("hide");
     minhaLista.removerTitulo(titulo.id);
-    if(isPageFavoritos){
-      renderCardsTitulo(conteiner, Array.from(minhaLista.pegarTitulos()), modal)
+    if (isPageFavoritos) {
+      renderCardsTitulo(
+        conteiner,
+        Array.from(minhaLista.pegarTitulos()),
+        modal,
+        isPageFavoritos
+      );
     }
   });
 
