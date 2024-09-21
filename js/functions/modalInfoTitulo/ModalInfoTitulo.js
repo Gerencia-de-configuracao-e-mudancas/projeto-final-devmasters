@@ -1,10 +1,7 @@
 import ListaFavoritos from "../listaFavoritos/ListaFavoritos.js";
 import renderCardsTitulo from "../renderCardsTitulo/renderCardsTitulo.js";
-let listaLocalStorege =
-  localStorage.getItem("listaFavoritos") !== null
-    ? JSON.parse(localStorage.getItem("listaFavoritos"))
-    : [];
-const minhaLista = new ListaFavoritos(listaLocalStorege);
+
+const minhaLista = new ListaFavoritos();
 
 function ModalInfoTitulo(titulo, modal, isPageFavoritos, conteiner) {
   modal.classList.remove("hide");
@@ -63,7 +60,7 @@ function ModalInfoTitulo(titulo, modal, isPageFavoritos, conteiner) {
     if (isPageFavoritos) {
       renderCardsTitulo(
         conteiner,
-        Array.from(minhaLista.pegarTitulos()),
+        minhaLista.pegarTitulos(),
         modal,
         isPageFavoritos
       );
@@ -89,7 +86,7 @@ function ModalInfoTitulo(titulo, modal, isPageFavoritos, conteiner) {
     if (isPageFavoritos) {
       renderCardsTitulo(
         conteiner,
-        Array.from(minhaLista.pegarTitulos()),
+        minhaLista.pegarTitulos(),
         modal,
         isPageFavoritos
       );
